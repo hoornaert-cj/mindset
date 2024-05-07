@@ -19,7 +19,7 @@
 			<nav id="footer-navigation" class="footer-navigation">
     			<?php wp_nav_menu( array( 'theme_location' => 'footer-left') ); ?>
 			</nav>
-			<nav id="footer-navigation" class="footer-navigation">
+			<nav id="footer-navigation" class="social-navigation">
     			<?php wp_nav_menu( array( 'theme_location' => 'footer-right') ); ?>
 			</nav>
 		</div><!-- .footer-menus -->
