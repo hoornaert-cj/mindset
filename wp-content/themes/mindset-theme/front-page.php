@@ -49,7 +49,7 @@ get_header();
 							<article>
 								<a href="<?php the_permalink(); ?>">
 									<h3><?php the_title(); ?></h3>
-									<?php the_date( 'Y-m-d', '<p>', '</p>' ); ?>
+									<?php the_date( '', '<p>', '</p>' ); ?>
 								</a>
 							</article>
 							<?php
