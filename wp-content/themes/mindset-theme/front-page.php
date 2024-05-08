@@ -17,19 +17,50 @@ get_header();
     while ( have_posts() ) :
         the_post();
 
-        get_template_part( 'template-parts/content', 'page' );
+        // get_template_part( 'template-parts/content', 'page' );
         ?>
         <!-- closing the PHP tag so that sections can be created without echoes -->
         <section class="home-intro"></section>
+        <?php the_post_thumbnail('large'); ?>
+        <?php if ( function_exists( 'get_field' ) ) {
+            if ( get_field( 'top_section' ) ) {
+                the_field( 'top_section' );
+            }
+        }
+        ?>
 
         <section class="home-work"></section>
 
         <section class="home-work"></section>
 
         <section class="home-left"></section>
-
+        <?php if ( function_exists( 'get_field' ) ) {
+            if ( get_field( 'left_section_heading' ) ) {
+                echo '<h2>';
+                the_field( 'left_section_heading' );
+                echo '</h2>';
+            if(get_field('left_section_content')) {
+                echo '<p>';
+                the_field( 'left_section_content' );
+                echo '</p>';
+                }
+            }
+        }
+        ?>
         <section class="home-right"></section>
-
+            <?php if ( function_exists( 'get_field' ) ) {
+                if ( get_field( 'right_section_heading' ) ) {
+                    echo '<h2>';
+                    the_field( 'right_section_heading' );
+                    echo '</h2>';
+                if(get_field('right_section_content')) {
+                    echo '<p>';
+                    esc_html(the_field( 'right_section_content' ));
+                    echo '</p>';
+                 }
+            }
+        }
+        ?>
         <section class="home-slider"></section>
 
         <section class="home-blog">
