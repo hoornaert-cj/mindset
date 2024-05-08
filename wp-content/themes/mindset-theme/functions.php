@@ -204,4 +204,23 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+// add theme color meta tag
+function fwd_theme_color() {
+    echo '<meta name="theme-color" content="#fff200">';
+}
+add_action( 'wp_head', 'fwd_theme_color', 1 );
+
+// change the excerpt length to 20 words
+function fwd_excerpt_length( $length ) {
+    return 20;
+}
+add_filter( 'excerpt_length', 'fwd_excerpt_length', 999 );
+
+//remove the ... from the excerpt and add a reading more link
+function fwd_excerpt_more( $more ) {
+	$more = '... <a href= " ' .  esc_url( get_permalink() ) . ' ">'. __( 'Continue Reading'  ) . '</a> ';
+	return $more;
+}
+
+add_filter('excerpt_more', 'fwd_excerpt_more');
 

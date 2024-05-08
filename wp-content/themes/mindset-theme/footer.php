@@ -24,9 +24,8 @@
         </nav>
     </div><!-- .footer-menus -->
     <div class="site-info">
-        <?php esc_html_e( 'Created by ', 'fwd' ); ?><a href="<?php echo esc_url( __( 'https://wp.bcitwebdeveloper.ca/', 'fwd' ) ); ?>"><?php esc_html_e( 'Jonathon Leathers', 'fwd' ); ?></a>
-        |
-        <a href="<?php echo esc_url( get_privacy_policy_url() ); ?>"><?php esc_html_e( 'Privacy Policy', 'fwd' ); ?></a>
+        <?php esc_html_e( 'Created by ', 'fwd' ); ?><a href="<?php echo esc_url( __( 'https://chrishoornaert.com/', 'fwd' ) ); ?>"><?php esc_html_e( 'Chris Hoornaert | ', 'fwd' ); ?></a>
+        <?php  the_privacy_policy_link(); ?> <br>
     </div><!-- .site-info -->
 </footer><!-- #colophon -->
 
