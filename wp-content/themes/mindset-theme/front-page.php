@@ -55,7 +55,7 @@ get_header();
                     echo '</h2>';
                 if(get_field('right_section_content')) {
                     echo '<p>';
-                    esc_html(the_field( 'right_section_content' ));
+                    the_field( 'right_section_content' );
                     echo '</p>';
                  }
             }
