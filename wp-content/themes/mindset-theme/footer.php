@@ -27,7 +27,7 @@ if ( function_exists( 'get_field' ) && ! is_page( 17 ) ) {
         <?php endif; ?>
 
         <?php if ( $email ) : ?>
-            <p><strong>Email:</strong> <a href="mailto:<?php echo antispambot( $email ); ?>"><?php echo antispambot( $email ); ?></a></p>
+            <p><strong>Email:</strong> <a href="mailto:<?php echo  $email ; ?>"><?php echo $email; ?></a></p>
         <?php endif; ?>
     </div><!-- .footer-contact -->
 

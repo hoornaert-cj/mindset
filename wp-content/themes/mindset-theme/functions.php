@@ -187,6 +187,10 @@ add_action( 'wp_enqueue_scripts', 'fwd_scripts' );
  */
 require get_template_directory() . '/inc/template-tags.php';
 
+
+//Register CPTs and Taxonomies
+require get_template_directory() . '/inc/cpt-taxonomy.php';
+
 /**
  * Functions which enhance the theme by hooking into WordPress.
  */
@@ -196,6 +200,7 @@ require get_template_directory() . '/inc/template-functions.php';
  * Customizer additions.
  */
 require get_template_directory() . '/inc/customizer.php';
+
 
 /**
  * Load Jetpack compatibility file.
@@ -236,3 +241,14 @@ function fwd_post_filter( $use_block_editor, $post ) {
 }
 add_filter( 'use_block_editor_for_post', 'fwd_post_filter', 10, 2 );
 
+function wpb_change_title_text( $title ){
+	$screen = get_current_screen();
+
+	if  ( 'fwd-service' == $screen->post_type ) {
+		 $title = 'Enter the type of service being offered';
+	}
+
+	return $title;
+}
+
+add_filter( 'enter_title_here', 'wpb_change_title_text' );
