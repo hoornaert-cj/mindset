@@ -28,24 +28,10 @@ get_header();
             comments_template();
         endif;
 
-        // Check if ACF function exists and if we are on the Contact page
+        //check if the page is 'contact'
         if ( function_exists( 'get_field' ) && is_page( 'contact' ) ) :
     ?>
-            <section class="contact-details">
-                <h2>Contact Details</h2>
-                <?php
-                // Display the ACF fields
-                $physical_address = get_field( 'physical_address' );
-                if ( $physical_address ) :
-                    echo '<p><strong>Address:</strong> ' . esc_html( $physical_address ) . '</p>';
-                endif;
 
-                $email = get_field( 'email' );
-                if ( $email ) :
-                    echo '<p><strong>Email:</strong> <a href="mailto:' . $email  . '">' . $email  . '</a></p>';
-                endif;
-                ?>
-            </section>
     <?php
         endif;
     endwhile; // End of the loop.

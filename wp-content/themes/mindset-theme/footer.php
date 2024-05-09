@@ -16,7 +16,6 @@ $email = '';
 
 if ( function_exists( 'get_field' ) && ! is_page( 17 ) ) {
     $physical_address = get_field( 'physical_address' , 17);
-    var_dump($physical_address);
     $email = get_field( 'email' , 17);
 }
 ?>

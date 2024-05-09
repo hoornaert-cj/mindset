@@ -20,6 +20,8 @@
 		<?php
 		the_content();
 
+
+
 		wp_link_pages(
 			array(
 				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'fwd' ),
@@ -27,6 +29,22 @@
 			)
 		);
 		?>
+
+<section class="contact-details">
+                <h2>Contact Details</h2>
+                <?php
+                $physical_address = get_field( 'physical_address' );
+                if ( $physical_address ) :
+                    echo '<p><strong>Address:</strong> ' . esc_html( $physical_address ) . '</p>';
+                endif;
+
+                $email = get_field( 'email' );
+                if ( $email ) :
+                    echo '<p><strong>Email:</strong> <a href="mailto:' . esc_url($email)  . '">' . esc_url($email)  . '</a></p>';
+                endif;
+                ?>
+            </section>
+
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">

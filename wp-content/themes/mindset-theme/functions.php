@@ -227,7 +227,7 @@ add_filter('excerpt_more', 'fwd_excerpt_more');
 //enable classic editor on specific pages
 function fwd_post_filter( $use_block_editor, $post ) {
     // Add IDs to the array
-    $page_ids = array( 80 );
+    $page_ids = array( 7 );
     if ( in_array( $post->ID, $page_ids ) ) {
         return false;
     } else {
