@@ -20,6 +20,9 @@ if ( ! is_active_sidebar( $sidebar ) ) {
 }
 ?>
 
+
 <aside id="secondary" class="widget-area">
 	<?php dynamic_sidebar( $sidebar ); ?>
+	<?php get_template_part('template-parts/work-categories'); ?>
+	<?php get_template_part('template-parts/random-testimonial'); ?>
 </aside><!-- #secondary -->
