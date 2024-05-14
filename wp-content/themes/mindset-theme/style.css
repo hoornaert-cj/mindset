@@ -1016,9 +1016,46 @@ svg path {
 	grid-gap: 2em;
 }
 
+/* Home Page */
+
+/* styling for the home page's featured works */
+
+.home-work {
+    text-align: center; /* Center align the header text */
+}
+
+.articles-container {
+    display: flex;
+    overflow-x: auto;
+    margin: 0 -10px;
+}
+
+.home-work article {
+    flex: 0 0 auto;
+    margin: 0 10px;
+}
+
+@media (max-width: 50em) {
+    .articles-container {
+        overflow-x: visible;
+	}
+}
+
+/* style the slider */
+swiper-slide swiper-slide-active {
+	margin: 2rem 0;
+}
+
+/* style the slider button */
+.page-id-7 main button {
+	background-color: rgba(255, 255, 255, 0);
+	border: none;
+}
+
 /* About Page */
 .page-id-15 main .wp-block-pullquote,
-.page-id-13 main .wp-block-pullquote {
+.page-id-13 main .wp-block-pullquote,
+.page-id-7 main .wp-block-pullquote {
 	border: none;
 	padding: 0;
 	text-align: left;

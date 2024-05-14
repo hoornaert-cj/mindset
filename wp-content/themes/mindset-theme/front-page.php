@@ -60,7 +60,6 @@ get_header();
 		?>
         </section>
 
-        <section class="home-work"></section>
 
         <section class="home-left"></section>
         <?php if ( function_exists( 'get_field' ) ) {
