@@ -721,7 +721,8 @@ svg path {
 	}
 
 	.no-sidebar .site,
-	.page-template-full-width .site {
+	.page-template-full-width .site,
+	.page-id-7 .site  {
 		grid-template-columns: 1fr minmax(0, 1000px) 1fr;
 		grid-template-areas:
 			"header header header"
@@ -977,6 +978,31 @@ svg path {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	grid-gap: 2em;
+}
+
+/* About Page */
+.page-id-15 main .wp-block-pullquote {
+	border: none;
+	padding: 0;
+	text-align: left;
+	font-size: 1rem;
+}
+
+.widget-area widget-block .wp-block-pullquote {
+	border: none;
+}
+
+.scroll-top {
+    background: transparent;
+    border: none;
+    padding: 1rem;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    cursor: pointer;
+    transition: all ease 0.3s;
+    opacity: 0;
+    color: #fff200;
 }
 
 /* Footer

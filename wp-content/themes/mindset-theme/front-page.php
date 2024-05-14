@@ -13,14 +13,11 @@ get_header();
 
 <main id="primary" class="site-main">
 
-    <?php
-    while ( have_posts() ) :
-        the_post();
+        <?php while ( have_posts() ) : the_post(); ?>
 
-        // get_template_part( 'template-parts/content', 'page' );
-        ?>
-        <!-- closing the PHP tag so that sections can be created without echoes -->
-        <section class="home-intro"></section>
+
+        <section class="home-intro">
+        <h1><?php the_title(); ?></h1>
         <?php the_post_thumbnail('large'); ?>
         <?php if ( function_exists( 'get_field' ) ) {
             if ( get_field( 'top_section' ) ) {
@@ -28,8 +25,9 @@ get_header();
             }
         }
         ?>
+        </section>
 
-        <section class="home-work"></section>
+        <section class="home-work">
         <h2>Featured Works</h2>
         <?php
 		$args = array(
@@ -60,6 +58,7 @@ get_header();
 		    wp_reset_postdata();
 		}
 		?>
+        </section>
 
         <section class="home-work"></section>
 
@@ -92,7 +91,31 @@ get_header();
         }
         ?>
         <section class="home-slider"></section>
+        <?php
+        $args = array(
+        'post_type'      => 'fwd-testimonial',
+        'posts_per_page' => -1
+        );
 
+    $query = new WP_Query( $args );
+
+    if ( $query->have_posts() ) : ?>
+        <div class="swiper">
+            <div class="swiper-wrapper">
+                <?php while ( $query->have_posts() ) : $query->the_post(); ?>
+                    <div class="swiper-slide">
+                        <?php the_content(); ?>
+                    </div>
+                <?php endwhile; ?>
+            </div>
+            <button class="swiper-pagination"></button>
+            <button class="swiper-button-prev"></button>
+            <button class="swiper-button-next"></button>
+        </div>
+        <?php
+        wp_reset_postdata();
+        endif;
+        ?>
         <section class="home-blog">
             <h2><?php esc_html_e( 'Latest Blog Posts', 'fwd' ); ?></h2>
             <?php
@@ -130,6 +153,5 @@ get_header();
 
 <!-- leave PHP open at the end of WordPress files -->
 <?php
-get_sidebar();
 get_footer();
 ?>
