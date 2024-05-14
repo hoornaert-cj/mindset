@@ -419,6 +419,7 @@ h5,
 h6 {
 	clear: both;
 	margin: .75em 0 .25em;
+	font-family: "Cinzel", sans-serif;
 }
 
 h1 {
@@ -701,6 +702,26 @@ svg path {
 	padding: 3rem 1rem 1rem;
 }
 
+	/* style the random testimonial in the sidebar */
+	.testimonial-content .wp-block-pullquote  {
+		border: none;
+		padding-top:  1rem;
+		margin-top: 0;
+	}
+	.testimonial-content .wp-block-pullquote blockquote {
+		border-bottom: none;
+		border-top: none;
+		text-align: left;
+	}
+
+	.testimonial-content .wp-block-pullquote blockquote p {
+		font-size: 1.1rem;
+	}
+
+	.testimonial-content .wp-block-pullquote cite {
+		font-size:  1rem;
+	}
+
 @media screen and (min-width: 50em) {
 	.site {
 		max-width: 2200px;
@@ -741,6 +762,21 @@ svg path {
 	.widget-area {
 		grid-area: sidebar;
 	}
+
+	/* style the text in the sidebar */
+	.widget-area .wp-block-heading {
+		font-size: 1.75rem;
+		margin-top: 0;
+		margin-bottom: 1rem;
+	}
+
+	.widget-area .wp-block-heading {
+		font-size: 1.75rem;
+		margin-top: 0;
+		margin-bottom: 1rem;
+	}
+
+
 
 	.page-template-left-sidebar .widget-area {
 		padding: 3rem 3rem 1rem 1rem;
@@ -981,7 +1017,8 @@ svg path {
 }
 
 /* About Page */
-.page-id-15 main .wp-block-pullquote {
+.page-id-15 main .wp-block-pullquote,
+.page-id-13 main .wp-block-pullquote {
 	border: none;
 	padding: 0;
 	text-align: left;

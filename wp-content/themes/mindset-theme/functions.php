@@ -179,6 +179,15 @@ function fwd_scripts() {
 		array(), //dependencies
 		null //version, must be set to null for Google Fonts to load multiple font families
 );
+
+	// Cinzel for H1, H2, and H3
+	wp_enqueue_style(
+    	'fwd-googlefonts-cinzel',
+    	'https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap',
+    	array(), //dependencies
+    	null
+);
+
 	wp_enqueue_style( 'fwd-style', get_stylesheet_uri(), array(), _S_VERSION );
 	wp_style_add_data( 'fwd-style', 'rtl', 'replace' );
 

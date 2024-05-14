@@ -6,7 +6,7 @@ $terms = get_terms(
 );
 if ( $terms && ! is_wp_error($terms) ) : ?>
     <section>
-        <h2><?php esc_html_e( 'See Our Work', 'fwd' ); ?></h2>
+        <h3><?php esc_html_e( 'See Our Work', 'fwd' ); ?></h3>
         <ul>
         <?php foreach ( $terms as $term ) : ?>
             <li><a href="<?php echo get_term_link( $term ); ?>"><?php echo esc_html( $term->name ); ?></a></li>
