@@ -1,11 +1,12 @@
 <?php
+$taxonomy = 'service-type';
+
 $terms = get_terms(array(
-    'taxonomy' => 'service-type',
+    'taxonomy' => $taxonomy,
 ));
 
 if ($terms && !is_wp_error($terms)) {
     foreach ($terms as $term) {
-        // Display term name
         echo '<h2>' . $term->name . '</h2>';
 
         // Define args for WP_Query
@@ -16,7 +17,7 @@ if ($terms && !is_wp_error($terms)) {
             'order'          => 'ASC',
             'tax_query'      => array(
                 array(
-                    'taxonomy' => 'service-type',
+                    'taxonomy' => $taxonomy,
                     'field'    => 'slug',
                     'terms'    => $term->slug,
                 ),

@@ -171,6 +171,14 @@ add_action( 'widgets_init', 'fwd_widgets_init' );
  * Enqueue scripts and styles.
  */
 function fwd_scripts() {
+
+	//function has five params, must add value for first four params even if not using
+	wp_enqueue_style(
+		'fwd-googlefonts', //unique handle
+		'https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap',
+		array(), //dependencies
+		null //version, must be set to null for Google Fonts to load multiple font families
+);
 	wp_enqueue_style( 'fwd-style', get_stylesheet_uri(), array(), _S_VERSION );
 	wp_style_add_data( 'fwd-style', 'rtl', 'replace' );
 

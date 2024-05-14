@@ -85,7 +85,7 @@ function fwd_register_custom_post_types() {
         'menu_icon'          => 'dashicons-heart',
         'supports'           => array( 'title', 'editor' ),
         'template'           => array( array( 'core/pullquote' ) ),
-        //block is completely locked down
+        //block is completely locked down0
         'template_lock' => 'all'
     );
 
@@ -230,6 +230,16 @@ function fwd_rewrite_flush() {
 
 }
 add_action( 'after_switch_theme', 'fwd_rewrite_flush' );
+
+//revmoe the archive title prefix from fwd-work
+function fwd_archive_title_prefix( $prefix ){
+    if ( get_post_type() === 'fwd-work' ) {
+        return false;
+    } else {
+        return $prefix;
+    }
+}
+add_filter( 'get_the_archive_title_prefix', 'fwd_archive_title_prefix' );
 
 
 

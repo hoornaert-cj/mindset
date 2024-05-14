@@ -94,7 +94,7 @@ endif;
 	endif;
 
 	?>
-</main><!-- #primary -->
+</main>
 
 
 <?php
