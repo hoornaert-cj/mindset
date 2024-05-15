@@ -12,7 +12,7 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-	</header><!-- .entry-header -->
+	</header>
 
 	<?php fwd_post_thumbnail(); ?>
 
@@ -31,19 +31,32 @@
 		?>
 
 <section class="contact-details">
-                <h2>Contact Details</h2>
-                <?php
-                $physical_address = get_field( 'physical_address' );
-                if ( $physical_address ) :
-                    echo '<p><strong>Address:</strong> ' . esc_html( $physical_address ) . '</p>';
-                endif;
+    <?php
+    $physical_address = get_field( 'physical_address' );
+    $email = get_field( 'email' );
 
-                $email = get_field( 'email' );
-                if ( $email ) :
-                    echo '<p><strong>Email:</strong> <a href="mailto:' . esc_url($email)  . '">' . esc_url($email)  . '</a></p>';
-                endif;
-                ?>
-            </section>
+    if ( $physical_address || $email ) :
+    ?>
+    <h2>Contact Details</h2>
+    <?php
+    if ( $physical_address ) :
+        echo '<p><strong>Address:</strong> ' . esc_html( $physical_address ) . '</p>';
+    endif;
+
+    if ( $email ) :
+        echo '<p><strong>Email:</strong> <a href="mailto:' . esc_url($email)  . '">' . esc_url($email)  . '</a></p>';
+    endif;
+    endif;
+    ?>
+</section>
+
+
+
+
+
+
+
+
 
 	</div><!-- .entry-content -->
 

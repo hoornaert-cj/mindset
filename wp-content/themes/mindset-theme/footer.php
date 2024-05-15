@@ -22,15 +22,18 @@ if ( function_exists( 'get_field' ) && ! is_page( 17 ) ) {
 
 <footer id="colophon" class="site-footer">
     <div class="footer-contact">
-        <?php if ( $physical_address ) : ?>
-            <?php get_template_part( 'images/location' ); ?>
-            <p><strong>Address:</strong> <?php echo esc_html( $physical_address ); ?></p>
-        <?php endif; ?>
-
-        <?php if ( $email ) : ?>
-            <p><strong>Email:</strong> <a href="mailto:<?php echo  $email ; ?>"><?php echo $email; ?></a></p>
-        <?php endif; ?>
-    </div><!-- .footer-contact -->
+        <section class="address-info">
+            <?php if ( $physical_address ) : ?>
+                <?php get_template_part( 'images/location' ); ?>
+                <p><strong>Address:</strong> <?php echo esc_html( $physical_address ); ?></p>
+            <?php endif; ?>
+        </section>
+        <section class="email-info">
+            <?php if ( $email ) : ?>
+                <p>&#9993; <a href="mailto:<?php echo  $email ; ?>"><?php echo $email; ?></a></p>
+            <?php endif; ?>
+            </section>
+        </div><!-- .footer-contact -->
 
     <div class="footer-menus">
         <nav id="footer-navigation" class="footer-navigation">

@@ -27,38 +27,40 @@ get_header();
         ?>
         </section>
 
-        <section class="home-work">
+    <section class="home-work">
         <h2>Featured Works</h2>
+        <section class="home-work-featured">
         <?php
-		$args = array(
-		    'post_type'      => 'fwd-work',
-		    'posts_per_page' => 4,
-            'tax_query'             => array(
+        $args = array(
+            'post_type'      => 'fwd-work',
+            'posts_per_page' => 4,
+            'tax_query'      => array(
                 array(
                     'taxonomy' => 'fwd-featured',
-                    'field'               => 'slug',
-                    'terms'             => 'front-page'
+                    'field'    => 'slug',
+                    'terms'    => 'front-page'
                 )
             )
-		);
-		$query = new WP_Query( $args );
+        );
+        $query = new WP_Query( $args );
 
-		if ( $query->have_posts() ) {
-		    while( $query->have_posts() ) {
-		        $query->the_post();
-		        ?>
-		        <article>
-		            <a href="<?php the_permalink(); ?>">
+        if ( $query->have_posts() ) {
+            while( $query->have_posts() ) {
+                $query->the_post();
+                ?>
+                <article>
+                    <a href="<?php the_permalink(); ?>">
                         <?php the_post_thumbnail('medium'); ?>
-		                <h3><?php the_title(); ?></h3>
-		            </a>
-		        </article>
-		        <?php
-		    }
-		    wp_reset_postdata();
-		}
-		?>
+                        <h3><?php the_title(); ?></h3>
+                    </a>
+                </article>
+                <?php
+            }
+            wp_reset_postdata();
+        }
+        ?>
         </section>
+    </section>
 
 
         <section class="home-left"></section>

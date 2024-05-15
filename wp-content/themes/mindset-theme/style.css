@@ -700,6 +700,15 @@ svg path {
 
 .widget-area {
 	padding: 3rem 1rem 1rem;
+	display: none;
+}
+
+/* Media Query for screens larger than 43.5em */
+@media screen and (min-width: 43.5em) {
+    .widget-area {
+		/* display the sidebar for larger screens */
+        display: block;
+    }
 }
 
 	/* style the random testimonial in the sidebar */
@@ -1018,27 +1027,67 @@ svg path {
 
 /* Home Page */
 
+.home-blog article {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	border-bottom: 1px solid #000;
+	padding: 1rem 0;
+}
+
+.home-blog h2 {
+	text-align: center;
+}
+
+.home-blog p {
+	margin-bottom: 0;
+}
+
 /* styling for the home page's featured works */
 
 .home-work {
     text-align: center; /* Center align the header text */
 }
 
-.articles-container {
+.home-work-featured {
     display: flex;
-    overflow-x: auto;
-    margin: 0 -10px;
+    flex-wrap: wrap;
 }
 
-.home-work article {
-    flex: 0 0 auto;
-    margin: 0 10px;
+.home-work-featured article {
+    flex: 0 0 calc(50% - 1.25rem);
+    margin: 0.625rem;
 }
+
+.home-work-featured article a {
+    display: block;
+}
+
+.home-work-featured article img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
 
 @media (max-width: 50em) {
     .articles-container {
         overflow-x: visible;
 	}
+
+	.home-work {
+        padding-top: 1.25rem;
+    }
+
+    .home-work h2 {
+        width: 100%;
+        text-align: center;
+    }
+
+    .home-work-featured article {
+        flex-basis: calc(33.333% - 1.25rem);
+    }
 }
 
 /* style the slider */
@@ -1051,6 +1100,19 @@ swiper-slide swiper-slide-active {
 	background-color: rgba(255, 255, 255, 0);
 	border: none;
 }
+
+/* Blog Archive */
+#primary .post {
+    border-bottom: 1px solid #000;
+    padding-bottom: 1rem;
+    margin-top: 1.25rem;
+}
+
+/* #primary .post:first-child {
+    border-top: none;
+    margin-top: 0;
+    padding-top: 0;
+} */
 
 /* About Page */
 .page-id-15 main .wp-block-pullquote,
@@ -1137,6 +1199,25 @@ swiper-slide swiper-slide-active {
 	margin-top: 2rem;
 }
 
+.footer-contact {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.address-info {
+    display: flex;
+    align-items: center;
+}
+
+.address-info p {
+    margin-left: 10px;
+}
+
+.email-info {
+    order: 2;
+}
+
 @media screen and (min-width: 43.75em) {
 
 	.footer-menus ul {
@@ -1166,6 +1247,7 @@ swiper-slide swiper-slide-active {
 		margin: .5em 1em;
 	}
 
+
 	.site-footer {
 		text-align: left;
 		display: grid;
@@ -1193,6 +1275,21 @@ swiper-slide swiper-slide-active {
 		justify-content: flex-end;
 	}
 
+	address-info {
+        flex-basis: calc(50% - 10px);
+    }
+
+    .email-info {
+        order: 3;
+    }
+
+}
+
+@media screen and (min-width: 43.5em) {
+    .footer-contact {
+		display: flex;
+		flex-direction: row;
+	}
 }
 
 /* Comments
@@ -1403,6 +1500,10 @@ swiper-slide swiper-slide-active {
 /* Clear floats from the content area */
 .entry-footer {
 	clear: both;
+}
+
+.entry-footer span {
+	margin-right: 1rem;
 }
 
 /* This code will NOT work properly if there is a sidebar on the left or right */
