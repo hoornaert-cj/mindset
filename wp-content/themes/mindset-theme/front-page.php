@@ -118,7 +118,9 @@ get_header();
         endif;
         ?>
         <section class="home-blog">
-            <h2><?php esc_html_e( 'Latest Blog Posts', 'fwd' ); ?></h2>
+        <h2><?php esc_html_e( 'Latest Blog Posts', 'fwd' ); ?></h2>
+            <section class="home-blog-articles">
+
             <?php
                 $args = array(
                     'post_type'        => 'post',
@@ -145,6 +147,7 @@ get_header();
                     wp_reset_postdata();
                 }
             ?>
+            </section>
         </section>
         <?php
     endwhile; // End of the loop.

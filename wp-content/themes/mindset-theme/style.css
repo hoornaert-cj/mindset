@@ -704,7 +704,7 @@ svg path {
 }
 
 /* Media Query for screens larger than 43.5em */
-@media screen and (min-width: 43.5em) {
+@media screen and (min-width: 68em) {
     .widget-area {
 		/* display the sidebar for larger screens */
         display: block;
@@ -752,7 +752,10 @@ svg path {
 
 	.no-sidebar .site,
 	.page-template-full-width .site,
-	.page-id-7 .site  {
+	.page-id-7 .site,
+	.page-id-15 .site,
+	.single-fwd-work .site,
+	.post-type-archive-fwd-work .site   {
 		grid-template-columns: 1fr minmax(0, 1000px) 1fr;
 		grid-template-areas:
 			"header header header"
@@ -1101,6 +1104,46 @@ swiper-slide swiper-slide-active {
 	border: none;
 }
 
+/* LAYOUT styles for the Home Blog */
+/* Mobile Layout for Home Blog */
+.home-blog-articles {
+display: grid;
+grid-template-columns: 1fr;
+gap: 1rem;
+padding: 1rem;
+}
+
+/* Home Blog Layout for Larger Screens */
+@media (min-width: 50em) {
+    .home-blog-articles  {
+        grid-template-columns: 50% 50%;
+    }
+}
+
+/* WORKS Archive Styling */
+/* Mobile Layout */
+.work-articles {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.article-item {
+    background-color: #f4f4f4;
+    padding: 1em;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+/* Layout for Larger Screens */
+@media (min-width: 50em) {
+    .work-articles  {
+        grid-template-columns: 50% 50%;
+    }
+}
+
+
 /* Blog Archive */
 #primary .post {
     border-bottom: 1px solid #000;
@@ -1140,6 +1183,49 @@ swiper-slide swiper-slide-active {
     opacity: 0;
     color: #fff200;
 }
+
+/* Services Page */
+/* Styling for the inline links */
+.service-navigation {
+    background-color: #f4f4f4;
+    padding: 1rem;
+    border-radius: 4px;
+    margin-bottom: 2rem;
+}
+
+.service-navigation ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.service-navigation li {
+    margin-bottom: 0.5rem;
+}
+
+.service-navigation a {
+    text-decoration: none;
+    color: #333;
+    display: block;
+    padding: 0.5rem;
+	border: 1px solid #000;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.service-navigation a:hover {
+    background-color: #ddd;
+}
+
+@media (min-width: 50em) {
+    .service-navigation ul {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+    }
+}
+
+
 
 /* Footer
 --------------------------------------------- */

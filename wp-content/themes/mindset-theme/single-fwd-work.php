@@ -10,6 +10,7 @@
 get_header();
 ?>
 
+	<body <?php body_class('single-fwd-work'); ?>>
 	<main id="primary" class="site-main">
 
 		<?php
